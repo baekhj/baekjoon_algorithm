@@ -1,0 +1,20 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+# Created by .ignore support plugin (hsz.mobi)
+
+# Gradle:
+.idea/**/gradle.xml
+.idea/**/libraries
+
+
+# Directories #
+/build/
+/bin/
+out/
+target/
+.idea
+classes/
+META-INF/
+
+
+*.class
