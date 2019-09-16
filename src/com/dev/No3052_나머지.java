@@ -2,10 +2,10 @@ package com.dev;
 
 import java.util.*;
 
-public class No3052 {
+public class No3052_나머지 {
     public static void main(String[] args) {
         /*
-나머지
+나머지 (3052번)
 시간 제한	메모리 제한	제출	정답	맞은 사람	정답 비율
 1 초	128 MB	8168	5417	4939	69.261%
 문제
@@ -33,6 +33,10 @@ public class No3052 {
 예제 출력 1
 6
          */
+        go();
+    }
+
+    public static void go(){
         Scanner sc = new Scanner(System.in);
         Set<Integer> s = new HashSet<Integer>();
         for(int x=0; x<10; x++) s.add(sc.nextInt()%42);

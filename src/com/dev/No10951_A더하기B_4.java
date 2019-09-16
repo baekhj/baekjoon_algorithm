@@ -2,7 +2,7 @@ package com.dev;
 
 import java.util.*;
 
-public class No10951 {
+public class No10951_A더하기B_4 {
     public static void main(String[] args) {
         /*
 A+B - 4
@@ -32,7 +32,12 @@ A+B - 4
 17
 7
          */
+        go();
+    }
+
+    public static void go(){
         Scanner sc = new Scanner(System.in);
         while(sc.hasNextInt())  System.out.println(sc.nextInt()+sc.nextInt());
     }
+
 }

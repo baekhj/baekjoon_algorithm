@@ -2,11 +2,11 @@ package com.dev;
 
 import java.io.*;
 
-public class No4344 {
+public class No4344_평균은넘겠지 {
 
     public static void main(String[] args) throws IOException {
         /*
-평균은 넘겠지
+평균은 넘겠지 (4344번)
 시간 제한	메모리 제한	제출	정답	맞은 사람	정답 비율
 1 초	256 MB	45833	16955	14837	38.601%
 문제
@@ -34,6 +34,29 @@ public class No4344 {
 66.667%
 55.556%
          */
+        go();
+        //go2();  //최초 방식
+    }
+
+    public static void go() throws IOException{
+        BufferedReader br = new BufferedReader( new InputStreamReader( System.in ) );
+        BufferedWriter bw = new BufferedWriter( new OutputStreamWriter( System.out ) );
+        int n = Integer.parseInt(br.readLine());
+        String[] arr = null;
+        Double sum = 0.0;
+        Double avg = 0.0;
+        int avgOverCnt = 0;
+        for(int x=0; x < n; x++){
+            arr = br.readLine().split(" "); sum = 0.0; avg = 0.0; avgOverCnt = 0;
+            for(int y=1; y < Integer.parseInt(arr[0])+1; y++) sum+=Double.parseDouble(arr[y]);
+            avg = sum/Integer.parseInt(arr[0]);
+            for(int y=1; y < Integer.parseInt(arr[0])+1; y++) if(Double.parseDouble(arr[y]) > avg) avgOverCnt++;
+            bw.write(String.format("%.3f",Math.round(avgOverCnt/Double.parseDouble(arr[0])*100*1000)/1000.0)+"%\n");
+        }
+        bw.flush();
+    }
+
+    public static void go2() throws IOException{
         BufferedReader br = new BufferedReader( new InputStreamReader( System.in ) );
         BufferedWriter bw = new BufferedWriter( new OutputStreamWriter( System.out ) );
         int n = Integer.parseInt(br.readLine());

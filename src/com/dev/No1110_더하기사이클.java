@@ -2,7 +2,7 @@ package com.dev;
 
 import java.util.*;
 
-public class No1110 {
+public class No1110_더하기사이클 {
     public static void main(String[] args) {
         /*
 더하기 사이클
@@ -36,6 +36,10 @@ N이 주어졌을 때, N의 사이클의 길이를 구하는 프로그램을 작
 예제 출력 3
 60
          */
+        go();
+    }
+
+    public static void go(){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int c = 0, N=n, f=0;

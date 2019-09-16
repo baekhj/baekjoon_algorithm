@@ -2,7 +2,7 @@ package com.dev;
 
 import java.util.*;
 
-public class No2884 {
+public class No2884_알람시계 {
     public static void main(String[] args) {
         /*
 알람 시계 (2884번)
@@ -34,6 +34,10 @@ public class No2884 {
 예제 출력 1
 9 25
          */
+        go();
+    }
+
+    public static void go(){
         Scanner sc = new Scanner(System.in);
         int h = sc.nextInt();
         int m = sc.nextInt();

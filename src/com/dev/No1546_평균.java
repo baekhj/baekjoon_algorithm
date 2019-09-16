@@ -2,10 +2,10 @@ package com.dev;
 
 import java.util.*;
 
-public class No1546 {
+public class No1546_평균 {
     public static void main(String[] args) {
         /*
-평균 성공스페셜 저지
+평균 (1546번)
 시간 제한	메모리 제한	제출	정답	맞은 사람	정답 비율
 2 초	128 MB	42762	20058	16492	47.540%
 문제
@@ -47,16 +47,20 @@ public class No1546 {
 예제 출력 5
 65.00
          */
+        go();
+    }
+
+    public static void go(){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        double[] l =new double[n];
-        double m=0, s=0;
-        for(int x=0; x<n; x++) l[x]=sc.nextLong();
-        Arrays.sort(l);
-        m = l[n-1];
-        for(int x=0; x<n; x++) l[x]= l[x]/m*100;
-        for(int x=0; x<n; x++) s+= l[x];
-        System.out.println(Math.round(s/n*100.00)/100.00);
+        Double[] arr = new Double[n];
+        for(int x = 0; x<arr.length; x++) arr[x] = sc.nextDouble();
+        Arrays.sort(arr);
+        Double max = arr[n-1];
+        Double avg = 0.0;
+        for(int x = 0; x<arr.length; x++) avg += arr[x]/max*100;
+        System.out.println(avg/n);
+
     }
 }
 

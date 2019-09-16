@@ -27,7 +27,7 @@ a: 합을 구해야 하는 정수 n개가 저장되어 있는 배열 (0 ≤ a[i]
 리턴값: a에 포함되어 있는 정수 n개의 합
          */
 
-public class No15596 {
+public class No15596_정수N개의합 {
     long sum(int[] a) {
         long ans = 0;
         for(int i:a) ans+=i;

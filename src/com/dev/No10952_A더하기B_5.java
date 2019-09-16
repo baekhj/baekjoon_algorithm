@@ -2,7 +2,7 @@ package com.dev;
 
 import java.io.*;
 
-public class No10952 {
+public class No10952_A더하기B_5 {
 
     public static void main(String[] args) throws IOException {
         /*
@@ -36,6 +36,10 @@ A+B - 5 (10952번)
 17
 7
          */
+        go();
+    }
+
+    public static void go() throws IOException {
         BufferedReader br = new BufferedReader( new InputStreamReader( System.in ) );
         BufferedWriter bw = new BufferedWriter( new OutputStreamWriter( System.out ) );
         String cs="";

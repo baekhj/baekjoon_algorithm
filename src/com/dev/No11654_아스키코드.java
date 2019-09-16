@@ -2,7 +2,7 @@ package com.dev;
 
 import java.util.*;
 
-public class No11654 {
+public class No11654_아스키코드 {
     public static void main(String[] args) {
         /*
 아스키 코드
@@ -42,6 +42,9 @@ z
 예제 출력 6
 122
          */
+        go();
+    }
+    public static void go(){
         Scanner sc = new Scanner(System.in);
         String n = sc.next();
         System.out.println((byte)n.charAt(0));

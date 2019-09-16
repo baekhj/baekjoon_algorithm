@@ -2,7 +2,7 @@ package com.dev;
 
 import java.util.*;
 
-public class No10818 {
+public class No10818_최소최대 {
     public static void main(String[] args) {
         /*
 최소, 최대 (10818번)
@@ -23,6 +23,9 @@ N개의 정수가 주어진다. 이때, 최솟값과 최댓값을 구하는 프�
 예제 출력 1
 7 35
          */
+        go();
+    }
+    public static void go(){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[] arr = new int[n];

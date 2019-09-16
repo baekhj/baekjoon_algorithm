@@ -3,11 +3,11 @@ package com.dev;
 import java.io.*;
 import java.util.*;
 
-public class No2920 {
+public class No2920_음계 {
 
     public static void main(String[] args) throws IOException {
         /*
-음계
+음계 (2920번)
 시간 제한	메모리 제한	제출	정답	맞은 사람	정답 비율
 1 초	128 MB	27340	15198	13632	57.352%
 문제
@@ -36,6 +36,10 @@ descending
 예제 출력 3
 mixed
          */
+        go();
+    }
+
+    public static void go() throws IOException {
         BufferedReader br = new BufferedReader( new InputStreamReader( System.in ) );
         BufferedWriter bw = new BufferedWriter( new OutputStreamWriter( System.out ) );
         String[] l= br.readLine().split(" ");

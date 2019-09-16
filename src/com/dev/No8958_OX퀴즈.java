@@ -2,11 +2,11 @@ package com.dev;
 
 import java.io.*;
 
-public class No8958 {
+public class No8958_OX퀴즈 {
 
     public static void main(String[] args) throws IOException {
         /*
-OX퀴즈
+OX퀴즈 (8958번)
 시간 제한	메모리 제한	제출	정답	맞은 사람	정답 비율
 1 초	128 MB	30268	16197	14233	55.870%
 문제
@@ -36,6 +36,32 @@ OOOOXOOOOXOOOOX
 55
 30
          */
+
+        go();
+        go2();  //최초 방식
+
+    }
+
+    public static void go() throws IOException {
+        BufferedReader br = new BufferedReader( new InputStreamReader( System.in ) );
+        BufferedWriter bw = new BufferedWriter( new OutputStreamWriter( System.out ) );
+        int n = Integer.parseInt(br.readLine());
+        String[] arr = null;
+        int sum,j;  //sum : 합계 / j : 현재아이의 점수
+        for(int x=0; x < n; x++){
+            arr = br.readLine().split(""); sum = 0; j = 0;
+            for(int y=0; y < arr.length; y++){
+                if(arr[y].equals("O")){
+                    j++; sum+=j;
+                }else j = 0;
+            }
+            bw.write(sum+"\n");
+        }
+        bw.flush();
+    }
+
+
+    public static void go2() throws IOException {
         BufferedReader br = new BufferedReader( new InputStreamReader( System.in ) );
         BufferedWriter bw = new BufferedWriter( new OutputStreamWriter( System.out ) );
         int n = Integer.parseInt(br.readLine());

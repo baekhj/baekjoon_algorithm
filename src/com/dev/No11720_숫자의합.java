@@ -1,8 +1,9 @@
 package com.dev;
 
 import java.io.*;
+import java.util.Scanner;
 
-public class No11720 {
+public class No11720_숫자의합 {
 
     public static void main(String[] args) throws IOException {
         /*
@@ -39,6 +40,22 @@ N개의 숫자가 공백 없이 쓰여있다. 이 숫자를 모두 합해서 출
 예제 출력 4
 46
          */
+
+        go();
+        go2();  //최초작성
+
+    }
+
+    public static void go() {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String[] arr = sc.next().split("");
+        int res = 0;
+        for(String a:arr) res += Integer.parseInt(a);
+        System.out.println(res);
+    }
+
+    public static void go2() throws IOException {
         BufferedReader br = new BufferedReader( new InputStreamReader( System.in ) );
         BufferedWriter bw = new BufferedWriter( new OutputStreamWriter( System.out ) );
         String n = br.readLine();
