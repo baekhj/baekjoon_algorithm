@@ -2,13 +2,13 @@ package com.dev.사칙연산;
 
 import java.io.*;
 
-public class No10950_A더하기3_3 {
+public class No11022_A더하기B8 {
 
     public static void main(String[] args) throws IOException {
         /*
-A+B - 3 (10950번)
+A+B - 8  알고리즘분류 : 그리디알고리즘 / 동전교환
 시간 제한	메모리 제한	제출	정답	맞은 사람	정답 비율
-1 초	256 MB	26758	16215	14401	61.775%
+1 초	256 MB	13609	10013	9401	75.160%
 문제
 두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.
 
@@ -18,7 +18,7 @@ A+B - 3 (10950번)
 각 테스트 케이스는 한 줄로 이루어져 있으며, 각 줄에 A와 B가 주어진다. (0 < A, B < 10)
 
 출력
-각 테스트 케이스마다 A+B를 출력한다.
+각 테스트 케이스마다 "Case #x: A + B = C" 형식으로 출력한다. x는 테스트 케이스 번호이고 1부터 시작하며, C는 A+B이다.
 
 예제 입력 1
 5
@@ -28,19 +28,19 @@ A+B - 3 (10950번)
 9 8
 5 2
 예제 출력 1
-2
-5
-7
-17
-7
+Case #1: 1 + 1 = 2
+Case #2: 2 + 3 = 5
+Case #3: 3 + 4 = 7
+Case #4: 9 + 8 = 17
+Case #5: 5 + 2 = 7
          */
         BufferedReader br = new BufferedReader( new InputStreamReader( System.in ) );
         BufferedWriter bw = new BufferedWriter( new OutputStreamWriter( System.out ) );
-        int t = Integer.parseInt(br.readLine());
-        String[] l;
-        for(int x=0; x<t; x++){
-            l = br.readLine().split(" ");
-            bw.write(Integer.parseInt(l[0])+Integer.parseInt(l[1])+"\n");
+        int cnt = Integer.parseInt(br.readLine());
+        String[] arr = null;
+        for(int x=1; x <= cnt ; x++){
+            arr = br.readLine().split(" ");
+            bw.write( "Case #"+x+": "+arr[0]+" + "+arr[1]+" = "+(Integer.parseInt(arr[0])+Integer.parseInt(arr[1]))+"\n");
         }
         bw.flush();
     }

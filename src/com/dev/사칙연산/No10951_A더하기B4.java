@@ -2,7 +2,7 @@ package com.dev.사칙연산;
 
 import java.util.*;
 
-public class No10951_A더하기B_4 {
+public class No10951_A더하기B4 {
     public static void main(String[] args) {
         /*
 A+B - 4

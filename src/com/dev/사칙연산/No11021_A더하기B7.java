@@ -2,7 +2,7 @@ package com.dev.사칙연산;
 
 import java.io.*;
 
-public class No11021_A더하기B_7 {
+public class No11021_A더하기B7 {
 
     public static void main(String[] args) throws IOException {
         /*
