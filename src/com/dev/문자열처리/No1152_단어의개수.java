@@ -1,10 +1,11 @@
-package com.dev;
+package com.dev.문자열처리;
 
 import java.io.*;
+import java.util.Scanner;
 
-public class No1152 {
+public class No1152_단어의개수 {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         /*
 단어의 개수
 시간 제한	메모리 제한	제출	정답	맞은 사람	정답 비율
@@ -31,6 +32,16 @@ Teullinika Teullyeotzi
 예제 출력 3
 2
          */
+        try{
+            go();
+        }catch (IOException e){e.printStackTrace();}
+
+        System.out.println();
+        go2();
+
+    }
+
+    public static void go() throws IOException{
         BufferedReader br = new BufferedReader( new InputStreamReader( System.in ) );
         BufferedWriter bw = new BufferedWriter( new OutputStreamWriter( System.out ) );
         String[] str = br.readLine().split(" ");
@@ -38,6 +49,15 @@ Teullinika Teullyeotzi
         for(String a:str) if(!a.replaceAll(" ", "").equals("")) r++;
         bw.write(r+"");
         bw.flush();
+    }
+
+    public static void go2() {
+        Scanner sc  = new Scanner(System.in);
+        String str = sc.nextLine();
+        String[] arr = str.split(" ");
+        int result = 0;
+        for (String s : arr) if(!s.equals("")) result++;
+        System.out.print(result);
     }
 
 }

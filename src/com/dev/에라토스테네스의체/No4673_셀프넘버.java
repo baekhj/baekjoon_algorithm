@@ -1,8 +1,10 @@
-package com.dev;
+package com.dev.에라토스테네스의체;
 
 import java.io.*;
+import java.util.HashSet;
+import java.util.Set;
 
-public class No4673 {
+public class No4673_셀프넘버 {
 
     public static void main(String[] args) throws IOException {
         /*
@@ -56,6 +58,16 @@ n을 d(n)의 생성자라고 한다. 위의 수열에서 33은 39의 생성자�
 9982
 9993
          */
+        try{
+            go();
+        }catch(IOException e){e.printStackTrace();}
+
+        System.out.println();
+        go2();
+
+    }
+
+    private static void go() throws IOException{
         BufferedWriter bw = new BufferedWriter( new OutputStreamWriter( System.out ) );
         int x = 10000;
         int idx=0;
@@ -78,6 +90,27 @@ n을 d(n)의 생성자라고 한다. 위의 수열에서 33은 39의 생성자�
         res+=a;
         return res;
     }
+
+
+
+    private static void go2() {
+
+        Set<Integer> set = new HashSet<Integer>();
+        for (int x=1; x<=10000; x++) set.add(x);
+        int newNumber;
+        String arr[];
+        for (int x=1; x<=10000; x++){
+            newNumber = x;
+            arr = (x+"").split("");
+            for(int y=0; y<arr.length; y++) newNumber += Integer.parseInt(arr[y]);
+            //if(newNumber > 10000) break;
+            set.remove(newNumber);
+        }
+        for(int i: set) System.out.println(i);
+    }
+
+
+
 
 
 

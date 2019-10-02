@@ -1,8 +1,8 @@
-package com.dev;
+package com.dev.구현;
 
 import java.util.*;
 
-public class No10872 {
+public class No10872_팩토리얼 {
     public static void main(String[] args) {
         /*
 팩토리얼
@@ -24,9 +24,14 @@ public class No10872 {
          */
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int r=1;    //합계
-        for(int x=1; x<=n; x++) r*=x;
-        System.out.println(r);
+        int result = go(n);
+        System.out.println(result);
+    }
+
+    public static int go(int n){
+        int result = 1;
+        for(int x=1; x<=n; x++) result*=x;
+        return result;
     }
 }
 

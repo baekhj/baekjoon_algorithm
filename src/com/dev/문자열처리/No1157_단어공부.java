@@ -1,8 +1,9 @@
-package com.dev;
+package com.dev.문자열처리;
 
+import java.io.*;
 import java.util.*;
 
-public class No1157 {
+public class No1157_단어공부 {
     public static void main(String[] args) {
         /*
 단어 공부
@@ -34,6 +35,15 @@ baaa
 예제 출력 4
 A
          */
+        go();
+        System.out.println();
+        try{
+            go2();
+        }catch(Exception e){ e.printStackTrace(); }
+
+    }
+
+    public static void go(){
         Scanner sc = new Scanner(System.in);
         String str = sc.next().toUpperCase();
 
@@ -56,6 +66,49 @@ A
         if(maxCnt == 1) System.out.println(maxStr);
         else System.out.println("?");
     }
+
+    public static void go2() throws IOException{
+
+        BufferedReader br = new BufferedReader( new InputStreamReader( System.in ) );
+        BufferedWriter bw = new BufferedWriter( new OutputStreamWriter( System.out ) );
+        String s = br.readLine();
+        s = s.toUpperCase();
+        String[] sArr = s.split("");
+        Arrays.sort(sArr);
+        String curStr="";
+        String maxStr="";
+        int curStrCnt=0;
+        int maxCnt = 0;
+        List<Integer> list = new ArrayList<Integer>();
+        for (int i = 0; i < sArr.length; i++) {
+            if(!curStr.equals(sArr[i])){
+                if(i!=0)list.add(curStrCnt);
+                if(curStrCnt >= maxCnt ) {
+                    maxCnt = curStrCnt;
+                    maxStr = curStr;
+                }
+                curStr = sArr[i];
+                curStrCnt = 1;
+            }else curStrCnt++;
+        }
+        if(curStrCnt >= maxCnt )  {
+            maxStr = curStr;
+            maxCnt = curStrCnt;
+        }
+        list.add(curStrCnt);
+        int maxStrCnt = 0;
+        for (int size : list) {
+            if(size == maxCnt) maxStrCnt++;
+        }
+        if(maxStrCnt==1) bw.write(maxStr+"");
+        else bw.write("?");
+
+
+        bw.flush();
+        bw.close();
+        br.close();
+    }
+
 }
 
 

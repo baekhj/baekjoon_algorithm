@@ -1,10 +1,11 @@
-package com.dev;
+package com.dev.기타;
 
 import java.io.*;
+import java.util.Scanner;
 
-public class No2675 {
+public class No2675_문자열반복 {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         /*
 문자열 반복
 시간 제한	메모리 제한	제출	정답	맞은 사람	정답 비율
@@ -28,6 +29,16 @@ QR Code "alphanumeric" 문자는 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ\$%*+-./: �
 AAABBBCCC
 /////HHHHHTTTTTPPPPP
          */
+
+        try {
+            go();
+        } catch (Exception e) { e.printStackTrace(); }
+
+        System.out.println();
+        go2();
+    }
+
+    public static void go() throws Exception{
         BufferedReader br = new BufferedReader( new InputStreamReader( System.in ) );
         BufferedWriter bw = new BufferedWriter( new OutputStreamWriter( System.out ) );
         int t = Integer.parseInt(br.readLine());    //테스트갯수
@@ -45,6 +56,27 @@ AAABBBCCC
         }
         bw.flush();
     }
+
+    public static void go2() {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        String result = "";  //반복횟수
+        int r = 0;
+        String S = "";  //반복할 문자열
+        for(int x=0; x<t; x++){
+            r = sc.nextInt();
+            S = sc.next();
+            for(int y=0; y<S.length(); y++){
+                for(int z=0; z<r; z++){
+                    result+=S.charAt(y)+"";
+                }
+            }
+            result+="\n";
+        }
+        System.out.print(result);
+
+    }
+
 
 }
 

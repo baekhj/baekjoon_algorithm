@@ -1,8 +1,8 @@
-package com.dev;
+package com.dev.부르트포스;
 
 import java.util.*;
 
-public class No1065 {
+public class No1065_한수 {
     public static void main(String[] args) {
         /*
 한수
@@ -34,8 +34,16 @@ public class No1065 {
 예제 출력 4
 144
          */
+
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
+
+        go(n);
+        go2(n);
+    }
+
+    public static void go(int n){
+
         int han = 0, gab=0;
         boolean isHan;
         String[] arr;
@@ -53,7 +61,28 @@ public class No1065 {
         }
         System.out.println(han);
     }
+
+    private static void go2(int n){ //2019.09.30
+
+        int hanCnt = n<100?n:99;    //99까지는 한수임
+        String[] arr;
+        int cha;
+        boolean isHansu=true;
+        for(int x=100;n>99 && x<= n; x++){
+            isHansu=true;
+            arr = (x+"").split("");
+            cha = Integer.parseInt(arr[1])-Integer.parseInt(arr[0]);
+            for (int y = 2; y < arr.length; y++) {
+                if(Integer.parseInt(arr[y])-Integer.parseInt(arr[y-1]) != cha ){
+                    isHansu = false; break;
+                }
+            }
+            if(isHansu) hanCnt++;
+        }
+        System.out.print(hanCnt);
+    }
 }
+
 
 
 

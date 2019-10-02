@@ -1,8 +1,8 @@
-package com.dev;
+package com.dev.문자열처리;
 
 import java.util.*;
 
-public class No10809 {
+public class No10809_알파벳찾기 {
     public static void main(String[] args) {
         /*
 알파벳 찾기
@@ -25,12 +25,31 @@ baekjoon
 1 0 -1 -1 2 -1 -1 -1 -1 4 3 -1 -1 7 5 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
          */
         Scanner sc = new Scanner(System.in);
-        String n = sc.next();
+        String s = sc.next();
+
+        go(s);
+        System.out.println();
+        go2(s);
+
+
+    }
+
+    public static void go(String str){
         Map<Character, Integer> m = new HashMap<Character, Integer>();
         int idx=-1; //첫번째 글짜 위치
-        for(int x=97; x<=122; x++) m.put((char)x, n.indexOf((char)x+""));
+        for(int x=97; x<=122; x++) m.put((char)x, str.indexOf((char)x+""));
         Iterator<Character> it = m.keySet().iterator();
         while (it.hasNext())  System.out.print(m.get(it.next())+" ");
+    }
+
+
+    public static void go2(String str){
+        String[] alpha = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+        String result = "";
+        for(int x=0; x<alpha.length; x++){
+            result += str.indexOf(alpha[x])+" ";
+        }
+        System.out.print(result);
     }
 }
 
