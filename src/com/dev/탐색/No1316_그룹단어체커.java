@@ -1,6 +1,7 @@
 package com.dev.탐색;
 
 import java.io.*;
+import java.util.Scanner;
 
 public class No1316_그룹단어체커 {
 
@@ -28,6 +29,39 @@ public class No1316_그룹단어체커 {
     예제 출력 1
     3
          */
+
+        go();
+        System.out.println();
+        go2();
+        System.out.println();
+
+    }
+
+    public static void go2(){
+        Scanner sc = new Scanner(System.in);
+        int len = sc.nextInt();
+        int groupCnt = 0;
+        String temp;
+        boolean isGroup, isOk;
+        for (int i = 0; i < len; i++) {
+            temp = sc.next(); isGroup = true;
+            for(int ii=0; ii<temp.length(); ii++){
+                isOk = true;
+                for(int iii=ii; iii<temp.length(); iii++){
+                    if(!isOk && temp.charAt(ii) == temp.charAt(iii)){
+                        isGroup = false; break;
+                    }
+                    if(temp.charAt(ii) != temp.charAt(iii)) isOk = false;
+                }
+                if(!isGroup) break;
+            }
+            if(isGroup) groupCnt++;
+        }
+        System.out.println(groupCnt);
+    }
+
+
+    public static void go() throws IOException{
         BufferedReader br = new BufferedReader( new InputStreamReader( System.in ) );
         BufferedWriter bw = new BufferedWriter( new OutputStreamWriter( System.out ) );
 

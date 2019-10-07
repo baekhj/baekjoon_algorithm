@@ -35,6 +35,23 @@ ljes=njak
 예제 출력 1
 6
          */
+
+        go();
+        System.out.println();
+        go2();
+        System.out.println();
+
+    }
+
+    public static void go2(){
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        String[] ca = {"c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="};
+        for(String ch:ca) str = str.replaceAll(ch, "@");
+        System.out.println(str.length());
+    }
+
+    public static void go(){
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
         String[] ca = {"c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="};
@@ -50,6 +67,6 @@ ljes=njak
             }
         }
         System.out.println(res+str.replaceAll(" ", "").length());
-
     }
+
 }

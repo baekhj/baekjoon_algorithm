@@ -1,9 +1,10 @@
 package com.dev.수학;
 
+import java.io.*;
 import java.util.*;
 
 public class No1712_손익분기점 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         /*
 손익분기점
 문제
@@ -28,6 +29,29 @@ A, B, C가 주어졌을 때, 손익분기점을 구하는 프로그램을 작성
 
          */
 
+        go();
+        System.out.println();
+        go2();
+        System.out.println();
+
+
+    }
+
+    public static void go2() throws IOException {
+        BufferedReader br = new BufferedReader( new InputStreamReader( System.in ) );
+        BufferedWriter bw = new BufferedWriter( new OutputStreamWriter( System.out ) );
+        String[] abc = br.readLine().split(" "); // A 고정비용, B 한대생산비용, C노트북가격
+        int a = Integer.parseInt(abc[0]);
+        int b = Integer.parseInt(abc[1]);
+        int c = Integer.parseInt(abc[2]);
+        int sell=b==c?-1:(a/(c-b))+1;
+        bw.write((sell<1?-1:sell)+"");
+        bw.flush();
+        bw.close();
+    }
+
+
+    public static void go(){
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();   //연 고정비용
         int b = sc.nextInt();   //노트북 한대 생산비용
@@ -35,4 +59,6 @@ A, B, C가 주어졌을 때, 손익분기점을 구하는 프로그램을 작성
         int res = c==b?0:(a/(c-b))+1;
         System.out.println(res<1?-1:res);
     }
+
+
 }

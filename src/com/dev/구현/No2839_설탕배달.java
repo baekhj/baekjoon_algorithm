@@ -30,6 +30,31 @@ public class No2839_설탕배달 {
 
          */
 
+        go();
+        System.out.println();
+        go2();
+        System.out.println();
+
+
+    }
+
+    public static void go2(){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int temp=n;
+        int res=0;
+        for(int x=n/5; x>=0; x--){
+            temp = n;
+            res = x;
+            temp = temp-(res*5);
+            res+= temp/3;
+            temp = temp-((temp/3)*3);
+            if(temp==0) break;
+        }
+        System.out.println(temp!=0?-1:res);
+    }
+
+    public static void go(){
         Scanner sc = new Scanner(System.in);
         int kg = sc.nextInt();
         int bg = -1;         // 들고가야할 봉지 갯수
