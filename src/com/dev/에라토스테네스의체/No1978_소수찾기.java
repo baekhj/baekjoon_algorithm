@@ -68,9 +68,6 @@ public class No1978_소수찾기 {
                 }
             }
         }
-        for(int x=1; x<=max; x++){
-            System.out.println(x+" : "+sosuMap.get(x));
-        }
         int sosuCnt = 0;
         for (int i : arr)  if(sosuMap.get(i)) sosuCnt++;    // 입력된 값들중 소수 찾기
         System.out.println(sosuCnt);
