@@ -5,7 +5,10 @@ import java.util.Scanner;
 public class No2292_벌집 {
 
     public static void main(String[] args) {
-        go();
+
+        go();   //처음 풀었을때 방식
+
+        go2();  //두번째 풀었을때
     }
 
     /*
@@ -30,6 +33,25 @@ public class No2292_벌집 {
     3
     */
 
+    //두번째 풀이 방식
+    private static void go2(){
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt(); //도착해야 하는 번호
+        int s=1;    //시작번호
+        int e = 1;  //종료번호
+        int g = 1;  //범위내 이동칸수
+        while (!(n>=s && n<=e)){
+            s = e+1;
+            e = s+(g*6)-1;
+            g++;
+        }
+        System.out.println(g);
+
+    }
+
+
+
+    //첫번째 풀이 방식
     public static void go(){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -42,7 +64,6 @@ public class No2292_벌집 {
             move++;
         }
         System.out.println(move);
-
     }
 
 }
